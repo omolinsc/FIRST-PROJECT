@@ -1,4 +1,5 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { IPersona } from './../../models/ipersona';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -36,6 +37,15 @@ public cambiarNombre = (): void => {
   // este evento se ejecuta justo antes de destruir un componente, nos será útil para "hacer limpieza" y no dejarnos cables sueltos.
   ngOnDestroy(): void {
     console.log("ME HAS DESTRUIDO");
+  }
+
+  // testeando los INPUTS
+  @Input() public personitas!: IPersona[];
+  @Output() sonEvent = new EventEmitter();
+
+  recogeTexto(texto: string){
+    console.log(texto);
+    this.sonEvent.emit(texto);
   }
 
 }

@@ -1,0 +1,4 @@
+<input type="text" placeholder="name" #name />
+<input type="url" placeholder="URL image" #image />
+<!-- <input type="text" placeholder="Acabado? true // false" #finished /> -->
+<button (click)="addNewBook({name: name.value, image: image.value})">Guardar</button>

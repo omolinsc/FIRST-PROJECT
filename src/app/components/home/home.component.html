@@ -1,1 +1,6 @@
 <p (click)=cambiarNombre()>home works! by {{name}}</p>
+
+<div *ngFor="let persona of personitas; let i = index">
+    <h2>{{i+1}}.{{persona.nombre}}</h2>
+    <h2>{{persona.edad}}</h2>    
+</div>

@@ -1,7 +1,8 @@
 <h1>HOLA SOY APP</h1>
 
-<app-home></app-home>
-<app-home></app-home>
+<!-- de esta forma le enviamos las props a app-home, similar a la de REACT - hay que vigilar la asignación de nombres -->
+<app-home [personitas]="personas"></app-home>
+<app-home (sonEvent)="sonMessage()"></app-home>
 <app-home></app-home>
 
 <h2>{{personas[0].nombre}}</h2>
@@ -11,9 +12,17 @@
 
 <!-- el ng-Template no se muestra en la estructura de la web si no se cumple la condición -->
 <ng-template [ngIf]="personas.length > 0">
-  <div *ngFor="let persona of personas; let i = index">
+  <!-- interruptor que cambia de clase se´gun si está encendido o apagado -->
+  <div *ngFor="let persona of personas; let i = index" [ngClass]="interruptor ? 'claro' : 'oscuro'">
     <h2>{{i+1}}.{{persona.nombre}}</h2>
     <h2>{{persona.edad}}</h2>
   </div>
 </ng-template>
 
+<!-- cuidado con el activador!!! no es onclick ni onClick... es click -->
+<button (click)="pressInterruptor()">Click Me Please</button>
+
+
+<h1>LIBRERIA</h1>
+
+<app-libreria></app-libreria>

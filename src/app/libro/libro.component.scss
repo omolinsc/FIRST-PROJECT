@@ -1,0 +1,29 @@
+.libros {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.listado {
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+input {
+    width: 250px;
+    height: 50px;
+}
+

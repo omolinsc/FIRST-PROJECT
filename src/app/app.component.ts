@@ -1,3 +1,4 @@
+import { ILibreria } from './models/ilibreria';
 import { IPersona } from './models/ipersona';
 import { Component } from '@angular/core';
 
@@ -12,6 +13,18 @@ export class AppComponent {
   public title: string = 'primer-proyecto-angular';
   public edad: number = 5;
   public alive: boolean = true;
+
+  // creamos una variable para trabajar eventos
+  // con la ! le aseguramos que en un futuro le daremos un valor
+  // con el ? podremos darselo o no
+  public interruptor: boolean = false;
+
+  
+  // interruptor
+  pressInterruptor () {
+    this.interruptor ? this.interruptor = false : this.interruptor = true;
+    console.log("works?")
+  }
 
   // los tipos de las funciones dependen del dato que retorna. De no retornar nada será tipo VOID
   saludar (): void {
@@ -33,20 +46,24 @@ export class AppComponent {
       alive: true
     },
     {
-      nombre: "Tamara",
+      nombre: "Marcos",
       edad: 24,
       alive: false,
       monstros: [
         {
           name: "Luz",
-          superpoder: "irse cuando Tamara la necesita",
+          superpoder: "irse cuando se la necesita",
         },
         {
           name: "Sombra",
-          superpoder: "hace que se enciendan las velas de casa",
+          superpoder: "desaparece cuando se enciende la luz",
         }
       ]
     }
   ]
+
+  sonMessage () {
+    console.log("Mi hijo me está enviando un mensaje");
+  }
 
 }

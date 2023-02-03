@@ -1,0 +1,9 @@
+<div class="container">
+    <input type="text" #buscador (input)="buscar(buscador.value)" placeholder="buscador de libros">
+    <div class="libros">
+        <div class="listado" *ngFor="let libro of librosFiltered">
+            <h4>{{libro.name}}</h4>
+            <img src="{{libro.image}}" alt="{{libro.name}}">
+        </div>
+    </div>
+</div>
